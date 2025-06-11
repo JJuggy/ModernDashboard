@@ -9,7 +9,7 @@ import Integrations from "@/components/integrations";
 export default function Dashboard() {
   return (
     <DashboardLayout>
-      <div className="flex flex-col gap-6">
+      <div className="flex  flex-col gap-6">
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-[700] text-[#15192c]">Dashboard</h1>

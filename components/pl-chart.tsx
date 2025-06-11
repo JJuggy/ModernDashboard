@@ -13,7 +13,7 @@ const data = [
 
 export default function PLChart() {
   return (
-    <Card className="border-none rounded-xl w-[50%] h-[360px]">
+    <Card className="border-none rounded-2xl w-[50%] h-[380px]">
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-lg font-semibold text-[#15192c]">
           P&L
@@ -27,29 +27,28 @@ export default function PLChart() {
           Total profit growth of 25%
         </p>
 
-        <div className="flex"></div>
         <div className="h-[220px] flex">
-          <div className="grid grid-cols-1 gap-2 mt-2">
+          <div className="grid grid-cols- gap-2 mt-2">
             {data.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <div
-                  className="w-2 h-2 rounded-full"
+                  className="w-1 h-1 rounded-full"
                   style={{ backgroundColor: item.color }}
                 />
                 <div className="flex flex-col">
-                  <span className="text-xs text-[#92959e]">{item.name}</span>
+                  <span className="text-xs text-[#92959e] whitespace-nowrap">{item.name}</span>
                   <span className="text-sm font-medium">{item.value}%</span>
                 </div>
               </div>
             ))}
           </div>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="90%" height="90%">
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
+                innerRadius={70}
                 outerRadius={90}
                 startAngle={90}
                 endAngle={-270}

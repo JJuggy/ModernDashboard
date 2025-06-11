@@ -6,7 +6,6 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Nucleus Dashboard",
   description: "Dashboard for Nucleus platform",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

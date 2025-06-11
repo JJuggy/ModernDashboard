@@ -1,26 +1,36 @@
-"use client"
+"use client";
 
-import type { ReactNode } from "react"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import { usePathname } from "next/navigation"
-import { User, CreditCard, FileText, Settings, HelpCircle, LogOut } from "lucide-react"
-import Image from "next/image"
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import {
+  User,
+  CreditCard,
+  FileText,
+  Settings,
+  HelpCircle,
+  LogOut,
+} from "lucide-react";
+import Image from "next/image";
 
 interface DashboardLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Profile", href: "/profile", icon: User },
-    { name: "Billings", href: "/", icon: CreditCard, active: true },
+    { name: "Billings", href: "/", icon: CreditCard },
     { name: "Invoices", href: "/invoices", icon: FileText },
     { name: "Settings", href: "/settings", icon: Settings },
     { name: "Help", href: "/help", icon: HelpCircle },
-  ]
+  ];
+
+  // Get the current active item based on the pathname
+  const activeItem = navItems.find(item => pathname === item.href) || navItems[0]; // Default to Profile if no match
 
   return (
     <div className="flex min-h-screen bg-[#f8f9fc]">
@@ -37,8 +47,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               key={item.name}
               href={item.href}
               className={cn(
-                "flex items-center rounded-full gap-3 px-4 py-6 pl-6  text-sm font-medium",
-                item.active ? "bg-[#f3f0ff] text-[#7549ff]" : "text-[#D0D2DA] hover:bg-[#f9f9fa]",
+                "flex items-center rounded-full gap-3 px-4 py-6 pl-6 text-sm font-medium",
+                activeItem.href === item.href
+                  ? "bg-[#f3f0ff] text-[#7549ff]"
+                  : "text-[#D0D2DA] hover:bg-[#f9f9fa]"
               )}
             >
               <item.icon size={20} />
@@ -60,5 +72,5 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <div className="max-w-7xl mx-auto">{children}</div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,9 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceDot } from "recharts"
-import { Maximize2 } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceDot,
+} from "recharts";
+import { Maximize2 } from "lucide-react";
+import Image from "next/image";
 
 const data = [
   { time: "10:30 AM", calls: 1 },
@@ -17,30 +27,40 @@ const data = [
   { time: "02:30 PM", calls: 9 },
   { time: "03:00 PM", calls: 7 },
   { time: "03:30 PM", calls: 4 },
-]
+];
 
 export default function ApiCallsChart() {
-  const [selectedPoint, setSelectedPoint] = useState(8) // Index of the highlighted point
+  const [selectedPoint, setSelectedPoint] = useState(8); // Index of the highlighted point
 
   return (
     <Card className=" border-none h-fit rounded-xl">
       <CardHeader className="flex flex-row items-center justify-between pb-2">
-        <CardTitle className="text-lg font-semibold text-[#15192c]">API Calls in last 6 hours</CardTitle>
+        <CardTitle className="text-lg font-semibold text-[#15192c]">
+          API Calls in last 6 hours
+        </CardTitle>
         <button className="text-[#92959e] hover:text-[#15192c]">
-          <Maximize2 size={18} />
+          <Image src="/Filter.png" alt="Logo" width={20} height={20} />
         </button>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="h-[240px] relative">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} margin={{ top: 20, right: 20, left: -20, bottom: 0 }}>
+            <LineChart
+              data={data}
+              margin={{ top: 20, right: 20, left: -20, bottom: 0 }}
+            >
               <defs>
                 <linearGradient id="colorCalls" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#7549ff" stopOpacity={0.1} />
                   <stop offset="95%" stopColor="#7549ff" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "#92959e" }} />
+              <XAxis
+                dataKey="time"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 12, fill: "#92959e" }}
+              />
               <YAxis
                 axisLine={false}
                 tickLine={false}
@@ -63,7 +83,12 @@ export default function ApiCallsChart() {
                 stroke="#7549ff"
                 strokeWidth={3}
                 dot={false}
-                activeDot={{ r: 8, fill: "#7549ff", stroke: "white", strokeWidth: 2 }}
+                activeDot={{
+                  r: 8,
+                  fill: "#7549ff",
+                  stroke: "white",
+                  strokeWidth: 2,
+                }}
                 fillOpacity={1}
                 fill="url(#colorCalls)"
               />
@@ -94,5 +119,5 @@ export default function ApiCallsChart() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { Maximize2 } from "lucide-react";
+import Image from "next/image";
 
 const data = [
   { name: "Re-used APIs", value: 36, color: "#fd2254" },
@@ -18,7 +19,7 @@ export default function PLChart() {
           P&L
         </CardTitle>
         <button className="text-[#92959e] hover:text-[#15192c]">
-          <Maximize2 size={18} />
+          <Image src="/Filter.png" alt="Logo" width={20} height={20} />
         </button>
       </CardHeader>
       <CardContent className="pt-0">

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function CurrentPlan() {
   return (
-    <Card className="border-none  rounded-xl w-[48%] [340px]">
+    <Card className="border-none  rounded-xl w-full md:w-[48%] [340px]">
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-lg font-semibold text-[#15192c]">
           Current Plan

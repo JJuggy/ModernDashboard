@@ -13,7 +13,7 @@ const data = [
 
 export default function PLChart() {
   return (
-    <Card className="border-none rounded-2xl w-[50%] h-[380px]">
+    <Card className="border-none rounded-2xl w-full md:w-[50%] h-[380px]">
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-lg font-semibold text-[#15192c]">
           P&L

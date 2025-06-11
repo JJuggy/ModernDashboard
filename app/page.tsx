@@ -10,14 +10,14 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <div className="flex  flex-col gap-6">
-        <div className="flex justify-between items-center">
+        <div className="flex-col flex md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0">
           <div>
             <h1 className="text-3xl font-[700] text-[#15192c]">Dashboard</h1>
             <p className="text-[#92959e] mt-1">
               Information about your current plan and usages
             </p>
           </div>
-          <div className="flex items-center gap-2 bg-white rounded-md  px-3 py-2">
+          <div className="flex items-center w-fit gap-2 bg-white rounded-md  px-3 py-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -58,7 +58,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1  lg:grid-cols-5 gap-6">
           <div className="col-span-3 flex flex-col space-y-4">
             <ApiCallsChart />
-            <div className="flex gap-4">
+            <div className="flex flex-col lg:flex-row gap-4">
               <PLChart />
               <CurrentPlan />
             </div>

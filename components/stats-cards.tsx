@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function StatsCards() {
   return (
     <div className="grid grid-cols-1 bg-[#FFFFFF] rounded-xl  flex items-center py-4 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div className="bg-white  p-6 flex items-center h-[80%]  border-r  gap-4">
+      <div className="bg-white  p-6 flex items-center h-[80%]  md:border-r  gap-4">
         <div className="w-10 h-10 rounded-lg bg-[#fff2e9] flex  items-center justify-center">
           <Image src="/Paper.png" alt="Logo" width={20} height={20} />
         </div>
@@ -14,7 +14,7 @@ export default function StatsCards() {
         </div>
       </div>
 
-      <div className="bg-white  p-6 flex items-center h-[80%]  border-r  gap-4">
+      <div className="bg-white  p-6 flex items-center h-[80%]  md:border-r  gap-4">
         <div className="w-10 h-10 rounded-lg bg-[#ede8ff] flex items-center justify-center">
           <Image src="/Swap.png" alt="Logo" width={20} height={20} />
         </div>
@@ -24,7 +24,7 @@ export default function StatsCards() {
         </div>
       </div>
 
-      <div className="bg-white  p-6 flex items-center h-[80%]  border-r  gap-4">
+      <div className="bg-white  p-6 flex items-center h-[80%]  md:border-r  gap-4">
         <div className="w-10 h-10 rounded-lg bg-[#eaf9ff] flex items-center justify-center">
           <Image src="/Profile.png" alt="Logo" width={20} height={20} />
         </div>

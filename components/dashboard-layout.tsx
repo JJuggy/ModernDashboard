@@ -39,7 +39,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className=" min-h-screen  bg-[#f8f9fc]">
       {/* Mobile menu button */}
-      <div className="fixed top-4 right-4  z-50 md:hidden">
+      <div className="fixed top-4 right-4 border rounded-md bg-white z-50 md:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 rounded-lg hover:bg-[#f9f9fa]"
@@ -84,22 +84,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu dropdown */}
       <div
         className={cn(
-          "fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-200 z-40 md:hidden",
-          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}
-        onClick={() => setIsMobileMenuOpen(false)}
-      />
-
-      <div
-        className={cn(
-          "fixed inset-y-0 left-0 w-full bg-white border-r border-[#ececee] transform transition-transform duration-200 md:hidden",
+          "fixed  left-0 w-64 bg-white border-r border-[#ececee] transform transition-transform duration-200 md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="p-6 h-full flex flex-col">
+        <div className="p-6  flex bg-white  h-screen flex-col">
           <div className="mb-10 mt-8">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Logo" width={32} height={32} />
@@ -137,7 +129,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </div>
       </div>
 
-      <div className={`flex-1w-full   p-8 overflow-auto md:ml-64 md:w-auto`}>
+      <div className={`flex-1 w-full pt-20 md:pt-0   p-8 overflow-auto md:ml-64 md:w-auto`}>
         <div className="max-w-7xl mx-auto w-full">{children}</div>
       </div>
     </div>

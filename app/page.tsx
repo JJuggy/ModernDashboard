@@ -55,7 +55,7 @@ export default function Dashboard() {
 
         <StatsCards />
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1  lg:grid-cols-5 gap-6">
           <div className="col-span-3 flex flex-col space-y-4">
             <ApiCallsChart />
             <div className="flex gap-4">
@@ -64,7 +64,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="col-span-1 grid grid-cols-1 gap-6">
+          <div className="col-span-2 grid grid-cols-1 gap-6">
             <ActivityFeed />
             <Integrations />
           </div>
